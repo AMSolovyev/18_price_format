@@ -31,7 +31,7 @@ def get_format_price(number):
     except (TypeError, ValueError):
         return None
     # проверить принадлежность данных определенному классу(типу данных)
-    if isinstance(number,(float)):
+    if isinstance(number, (float)):
         price = round(number)
         return price
     else:
