@@ -8,24 +8,24 @@ def get_parser():
     return parser.parse_args()
 
 
-def get_format_price(price):
+def get_formatted_price(price):
     if isinstance(price, bool):
         return None
     try:
         float_price = float(price)
         formatted_price = '{:,.2f}'.format(float_price).rstrip('0').rstrip('.')
-        return formatted_price.replace(',', '')
+        return formatted_price
 
     except (TypeError, ValueError):
         return None
 
 
-def printer_price(formatted_price):
+def print_price(formatted_price):
     print(formatted_price)
 
 
 if __name__ == '__main__':
     args = get_parser()
 
-    entered_price = get_format_price(args.price)
-    printer_price(entered_price)
+    entered_price = get_formatted_price(args.price)
+    print_price(entered_price)
