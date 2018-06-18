@@ -17,7 +17,7 @@ class TestGetFormatPrice(unittest.TestCase):
 
     def test_check_digit_True2(self):
         price = 12000
-        self.assertTrue(get_formatted_price(price), '12 000')
+        self.assertEqual(get_formatted_price(price), '12 000')
 
     def test_check_negative(self):
         price = - 12.00
@@ -35,7 +35,7 @@ class TestGetFormatPrice(unittest.TestCase):
 
     def test_cheks_zero(self):
         price = 0
-        self.assertIsNotNone(get_formatted_price(price), 0)
+        self.assertEqual(get_formatted_price(price), '0')
 
     def test_check_list(self):
         price = [12, 56.97, 35.00]

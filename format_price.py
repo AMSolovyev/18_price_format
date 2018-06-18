@@ -14,7 +14,7 @@ def get_formatted_price(price):
     try:
         float_price = float(price)
         formatted_price = '{:,.2f}'.format(float_price).rstrip('0').rstrip('.')
-        return formatted_price
+        return formatted_price.replace(',', ' ').replace('.00', '')
 
     except (TypeError, ValueError):
         return None
